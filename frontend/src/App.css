@@ -1,0 +1,297 @@
+/*
+  GLOBAL RESET
+*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+
+  background: #f6f8fc;
+  color: #172033;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+
+/*
+  LOGIN / SIGNUP PAGE
+*/
+
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  background: #0b1220;
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* Large background glow */
+
+.auth-container::before {
+  content: "";
+  position: absolute;
+  width: 650px;
+  height: 650px;
+  top: -300px;
+  left: -200px;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(59, 130, 246, 0.28),
+      transparent 68%
+    );
+}
+
+.auth-container::after {
+  content: "";
+  position: absolute;
+  width: 550px;
+  height: 550px;
+  right: -200px;
+  bottom: -250px;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(124, 58, 237, 0.25),
+      transparent 68%
+    );
+}
+
+
+/*
+  AUTH CARD
+*/
+
+.auth-card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 430px;
+  padding: 44px;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow:
+    0 35px 90px rgba(0, 0, 0, 0.38);
+}
+
+
+/*
+  AUTH HEADER
+*/
+
+.auth-card h1 {
+  margin-bottom: 8px;
+  color: #111827;
+  font-size: 30px;
+  line-height: 1.2;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.subtitle {
+  margin-bottom: 30px;
+  color: #6b7280;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+
+/*
+  AUTH INPUTS
+*/
+
+.form-group {
+  margin-bottom: 19px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #374151;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.form-group input {
+  width: 100%;
+  height: 50px;
+  padding: 0 15px;
+  border: 1px solid #d9dee8;
+  border-radius: 9px;
+  outline: none;
+  background: #f9fafb;
+  color: #111827;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.form-group input:hover {
+  border-color: #a5b4fc;
+  background: #ffffff;
+}
+
+.form-group input:focus {
+  border-color: #4f46e5;
+  background: #ffffff;
+  box-shadow:
+    0 0 0 4px rgba(79, 70, 229, 0.1);
+}
+
+.form-group input::placeholder {
+  color: #9ca3af;
+}
+
+
+/*
+  LOGIN + SIGNUP BUTTON
+*/
+
+.auth-card button {
+  width: 100%;
+  height: 50px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 9px;
+  background:
+    linear-gradient(
+      135deg,
+      #4f46e5,
+      #4338ca
+    );
+
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow:
+    0 8px 18px rgba(79, 70, 229, 0.25);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.auth-card button:hover {
+  transform: translateY(-2px);
+
+  background:
+    linear-gradient(
+      135deg,
+      #5b52ed,
+      #3730a3
+    );
+
+  box-shadow:
+    0 12px 25px rgba(79, 70, 229, 0.35);
+}
+
+.auth-card button:active {
+  transform: translateY(0);
+}
+
+.auth-card button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+
+/*
+  AUTH ERROR
+*/
+
+.message {
+  margin-top: 15px;
+  padding: 11px 13px;
+  border-radius: 8px;
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  color: #be123c;
+  font-size: 13px;
+  text-align: center;
+}
+
+
+/*
+  SWITCH LOGIN / SIGNUP
+*/
+
+.switch-page {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #edf0f4;
+  color: #6b7280;
+  font-size: 13px;
+  text-align: center;
+}
+
+.switch-page a {
+  color: #4f46e5;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.switch-page a:hover {
+  color: #3730a3;
+  text-decoration: underline;
+}
+
+
+/* 
+   MOBILE AUTH
+ */
+
+@media (max-width: 480px) {
+
+  .auth-container {
+    padding: 16px;
+  }
+
+  .auth-card {
+    padding: 32px 22px;
+
+    border-radius: 16px;
+  }
+
+  .auth-card h1 {
+    font-size: 26px;
+  }
+}
