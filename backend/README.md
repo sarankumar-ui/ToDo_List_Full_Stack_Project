@@ -13,7 +13,7 @@ b.Install dependices
 .npm express -> for frame work
 .npm mongoose -> for server connection.
 .npm nodemone -> Run the code automatically when we save the file.
-.npm dotenv -> To hide sencitive information.
+.npm dotenv -> To hide Sensitive information.
 .npm cors -> to connect frontend with backend APIs.
 .npm bcrypt -> password hashing.
 
