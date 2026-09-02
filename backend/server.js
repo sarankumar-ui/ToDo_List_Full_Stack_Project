@@ -10,11 +10,36 @@ const app = express();
 app.use(express.json());
 const port = process.env.PORT || 4000;
 
-app.use(cors({
-//   origin: "http://localhost:5173",
-    origin: "https://6a981a8b85d6f4559dbbbb0c--statuesque-dolphin-260563.netlify.app",
-//   credentials: true,
-}));
+// app.use(cors({
+// //   origin: "http://localhost:5173",
+//     origin: "https://6a981a8b85d6f4559dbbbb0c--statuesque-dolphin-260563.netlify.app",
+// //   credentials: true,
+// }));
+
+
+// CORS
+const allowedOrigins = [
+  "https://statuesque-dolphin-260563.netlify.app",
+  "http://localhost:5173",
+];
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      // Allow requests with no origin
+      // (Postman, server-to-server, etc.)
+      if (!origin) {
+        return callback(null, true);
+      }
+
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+
+      return callback(new Error("Not allowed by CORS"));
+    },
+  })
+);
 
 
 //Mongoodb connected
