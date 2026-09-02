@@ -41,6 +41,6 @@ app.get ("/", (req, res)=> {
     res.send("Backend connected successfully");
 });
 
-app.listen(4000, () => {
-    console.log(`Server is running port ${port}`);
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
 });
