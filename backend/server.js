@@ -12,7 +12,7 @@ const port = process.env.PORT || 4000;
 
 app.use(cors({
 //   origin: "http://localhost:5173",
-    origin: "https://6a981a8b85d6f4559dbbbb0c--statuesque-dolphin-260563.netlify.app/",
+    origin: "https://6a981a8b85d6f4559dbbbb0c--statuesque-dolphin-260563.netlify.app/login",
 //   credentials: true,
 }));
 
