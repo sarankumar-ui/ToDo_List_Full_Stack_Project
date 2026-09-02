@@ -50,7 +50,7 @@ export const createTask = async (taskData) => {
 
 // UPDATE TASK
 export const updateTask = async (id, taskData) => {
-  const response = await fetch(`${API_URL}/${id}`, {
+  const response = await fetch(`${API_URL}/updatetask/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -69,7 +69,7 @@ export const updateTask = async (id, taskData) => {
 
 // DELETE TASK
 export const deleteTask = async (id) => {
-  const response = await fetch(`${API_URL}/${id}`, {
+  const response = await fetch(`${API_URL}/deletetask/${id}`, {
     method: "DELETE",
   });
 
