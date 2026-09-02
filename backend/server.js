@@ -14,15 +14,26 @@ const port = process.env.PORT || 4000;
 
 
 // CORS
-const allowedOrigins = [
-  "https://statuesque-dolphin-260563.netlify.app",
-];
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (!origin) {
+      return callback(null, true);
+    }
 
-app.use(
-  cors({
-    origin: allowedOrigins,
-  })
-);
+    if (
+      origin === "https://statuesque-dolphin-260563.netlify.app" ||
+      /^https:\/\/[a-z0-9-]+--statuesque-dolphin-260563\.netlify\.app$/.test(origin)
+    ) {
+      return callback(null, true);
+    }
+
+    callback(new Error("Not allowed by CORS"));
+  },
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+};
+
+app.use(cors(corsOptions));
 
 
 //Mongoodb connected
