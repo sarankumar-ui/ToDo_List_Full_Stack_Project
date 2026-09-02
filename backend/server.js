@@ -31,10 +31,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 })
 .then(() => {
   console.log("MongoDB connected");
-
-  app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-  });
+ 
 })
 .catch((error) => {
   console.error("MongoDB connection failed:", error);
@@ -50,6 +47,11 @@ app.use("/api/users", userRoute);
 //Task Router
 const taskRoute = require('./routes/taskRoute')
 app.use("/api/task", taskRoute);
+
+
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+});
 
 
 app.get ("/", (req, res)=> {
