@@ -27,13 +27,19 @@ app.use(
 
 //Mongoodb connected
 mongoose.connect(process.env.MONGODB_URI, {
-    dbName: 'TuteDudePro_1'
+  dbName: "TuteDudePro_1",
 })
 .then(() => {
-    console.log('mongoDB connected')
-}).catch((error) => {
-    console.log('mongoDB not connected')
+  console.log("MongoDB connected");
+
+  app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+  });
+})
+.catch((error) => {
+  console.error("MongoDB connection failed:", error);
 });
+
 
 
 ///user Router
@@ -50,6 +56,3 @@ app.get ("/", (req, res)=> {
     res.send("Backend connected successfully");
 });
 
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-});
