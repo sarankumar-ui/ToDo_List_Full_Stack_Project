@@ -16,21 +16,25 @@ const port = process.env.PORT || 4000;
 // CORS
 const corsOptions = {
   origin: function (origin, callback) {
+    // Allow requests without an Origin header
+    // (Postman, server-to-server requests, etc.)
     if (!origin) {
       return callback(null, true);
     }
 
-    if (
-      origin === "https://statuesque-dolphin-260563.netlify.app" ||
-      /^https:\/\/[a-z0-9-]+--statuesque-dolphin-260563\.netlify\.app$/.test(origin)
-    ) {
+    if (allowedOrigins.includes(origin)) {
       return callback(null, true);
     }
 
-    callback(new Error("Not allowed by CORS"));
+    console.log("Blocked by CORS:", origin);
+    return callback(new Error("Not allowed by CORS"));
   },
+
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+
   allowedHeaders: ["Content-Type", "Authorization"],
+
+  credentials: true,
 };
 
 app.use(cors(corsOptions));
