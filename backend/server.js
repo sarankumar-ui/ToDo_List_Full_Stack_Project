@@ -7,43 +7,26 @@ dotenv.config();
 
 
 const app = express();
-app.use(express.json());
+
 const port = process.env.PORT || 4000;
 
 
 
 
 // CORS
-const allowedOrigins = [
-  "https://statuesque-dolphin-260563.netlify.app",
-  "http://localhost:5173",
-  "http://localhost:3000",
-];
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://statuesque-dolphin-260563.netlify.app",
+      "https://6a99461a5b624f08d42182f7--statuesque-dolphin-260563.netlify.app",
+    ],
+    credentials: true,
+  })
+);
 
-const corsOptions = {
-  origin: function (origin, callback) {
-    if (!origin) {
-      return callback(null, true);
-    }
 
-    if (allowedOrigins.includes(origin)) {
-      return callback(null, true);
-    }
-
-    console.log("Blocked by CORS:", origin);
-    return callback(new Error("Not allowed by CORS"));
-  },
-
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-
-  allowedHeaders: ["Content-Type", "Authorization"],
-
-  credentials: true,
-};
-
-app.use(cors(corsOptions));
-app.options("*", cors(corsOptions));
-
+app.use(express.json());
 
 //Mongoodb connected
 mongoose.connect(process.env.MONGODB_URI, {
