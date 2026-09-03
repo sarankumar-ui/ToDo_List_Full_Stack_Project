@@ -14,10 +14,14 @@ const port = process.env.PORT || 4000;
 
 
 // CORS
+const allowedOrigins = [
+  "https://statuesque-dolphin-260563.netlify.app",
+  "http://localhost:5173",
+  "http://localhost:3000",
+];
+
 const corsOptions = {
   origin: function (origin, callback) {
-    // Allow requests without an Origin header
-    // (Postman, server-to-server requests, etc.)
     if (!origin) {
       return callback(null, true);
     }
@@ -38,6 +42,7 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
 
 
 //Mongoodb connected
