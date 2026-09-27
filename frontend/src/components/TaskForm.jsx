@@ -22,8 +22,7 @@ function TaskForm({
 
   const [error, setError] = useState("");
 
-  // When user clicks Edit,
-  // put existing task data into form
+  
   useEffect(() => {
     if (editingTask) {
       setFormData({
@@ -40,7 +39,7 @@ function TaskForm({
     }
   }, [editingTask]);
 
-  // Input change
+
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -50,7 +49,7 @@ function TaskForm({
     }));
   };
 
-  // Submit
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -103,7 +102,7 @@ function TaskForm({
 
       <form onSubmit={handleSubmit}>
 
-        {/* TITLE */}
+        
 
         <div className="form-group">
           <label>Task Title</label>
@@ -117,7 +116,7 @@ function TaskForm({
           />
         </div>
 
-        {/* DESCRIPTION */}
+       
 
         <div className="form-group">
           <label>Description</label>
@@ -133,7 +132,7 @@ function TaskForm({
 
         <div className="form-row">
 
-          {/* STATUS */}
+          
 
           <div className="form-group">
             <label>Status</label>
@@ -165,7 +164,7 @@ function TaskForm({
             </select>
           </div>
 
-          {/* PRIORITY */}
+          
 
           <div className="form-group">
             <label>Priority</label>
@@ -195,7 +194,7 @@ function TaskForm({
 
         </div>
 
-        {/* BUTTONS */}
+        
 
         <div className="form-buttons">
 

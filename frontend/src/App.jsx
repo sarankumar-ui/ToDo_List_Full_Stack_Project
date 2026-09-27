@@ -13,9 +13,6 @@ import "./App.css";
 
 
 
-// PROTECTED ROUTE
-
-
 function ProtectedRoute({ children }) {
 
   const user = localStorage.getItem("user");
@@ -29,8 +26,8 @@ function ProtectedRoute({ children }) {
 
 
 
-// APP////////
-// ==========================================
+
+
 
 function App() {
 
@@ -40,7 +37,7 @@ function App() {
 
       <Routes>
 
-        {/* ROOT */}
+        
 
         <Route
           path="/"
@@ -53,7 +50,7 @@ function App() {
         />
 
 
-        {/* LOGIN */}
+        
 
         <Route
           path="/login"
@@ -61,7 +58,7 @@ function App() {
         />
 
 
-        {/* SIGNUP */}
+        
 
         <Route
           path="/signup"
@@ -69,7 +66,7 @@ function App() {
         />
 
 
-        {/* DASHBOARD */}
+       
 
         <Route
           path="/dashboard"
@@ -81,7 +78,7 @@ function App() {
         />
 
 
-        {/* INVALID URL */}
+        
 
         <Route
           path="*"

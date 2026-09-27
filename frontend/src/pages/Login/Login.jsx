@@ -45,7 +45,7 @@ function Login() {
         return;
       }
 
-      // Store logged-in user
+      
       localStorage.setItem(
         "user",
         JSON.stringify(data.user)

@@ -1,6 +1,4 @@
-/* 
-  TODO MANAGER DASHBOARD
- */
+
 
 .dashboard {
   min-height: 100vh;
@@ -10,9 +8,6 @@
 }
 
 
-/* 
-  TOP HEADER
-*/
 
 .dashboard-header {
   max-width: 1250px;
@@ -37,9 +32,6 @@
 }
 
 
-/* 
-  LOGOUT
-*/
 
 .logout-btn {
   height: 40px;
@@ -61,9 +53,7 @@
 }
 
 
-/* 
-  CONTENT
-*/
+
 
 .dashboard > * {
   max-width: 1250px;
@@ -72,9 +62,6 @@
 }
 
 
-/* 
-  ALERTS
-*/
 
 .error-message,
 .success-message {
@@ -108,9 +95,7 @@
 }
 
 
-/* 
-  STATISTICS
-*/
+
 
 .stats {
   display: grid;
@@ -153,7 +138,6 @@
 }
 
 
-/* Colored top line */
 
 .stat-card::before {
   content: "";
@@ -191,9 +175,7 @@
 }
 
 
-/* 
-  TASK FORM
-*/
+
 
 .task-form {
   margin-bottom: 25px;
@@ -213,9 +195,6 @@
 }
 
 
-/* 
-  FORM GROUP
-*/
 
 .task-form .form-group {
   display: flex;
@@ -278,9 +257,6 @@
 }
 
 
-/*
-  FORM ERROR
-*/
 
 .form-error {
   margin-bottom: 15px;
@@ -293,9 +269,7 @@
 }
 
 
-/*
-  FORM BUTTONS
-*/
+
 
 .form-buttons {
   display: flex;
@@ -331,9 +305,6 @@
 }
 
 
-/*
-  TASK SECTION
-*/
 
 .tasks-section {
   padding: 22px;
@@ -346,9 +317,6 @@
 }
 
 
-/*
-  TASK HEADER
-*/
 
 .tasks-heading {
   display: flex;
@@ -373,9 +341,6 @@
 }
 
 
-/*
-  SEARCH / FILTER
-*/
 
 .task-controls {
   display: flex;
@@ -413,9 +378,7 @@
 }
 
 
-/*
-  TASK GRID
-*/
+
 
 .task-grid {
   display: grid;
@@ -426,9 +389,7 @@
 }
 
 
-/*
-  TASK CARD
-*/
+
 
 .task-card {
   position: relative;
@@ -443,7 +404,7 @@
 }
 
 
-/* Task indicator */
+
 
 .task-card::before {
   content: "";
@@ -464,9 +425,6 @@
 }
 
 
-/*
-  TASK HEADER
-*/
 
 .task-card-header {
   display: flex;
@@ -484,9 +442,6 @@
 }
 
 
-/*
-  DESCRIPTION
-*/
 
 .description {
   margin: 8px 0;
@@ -496,9 +451,7 @@
 }
 
 
-/*
-  DATE
-*/
+
 
 .task-date {
   color: #9aa3b1;
@@ -506,9 +459,7 @@
 }
 
 
-/*
-  PRIORITY
-*/
+
 
 .priority {
   padding: 4px 8px;
@@ -541,9 +492,7 @@
 }
 
 
-/*
-  STATUS
-*/
+
 
 .status-row {
   display: flex;
@@ -577,9 +526,7 @@
 }
 
 
-/*
-  ACTION BUTTONS
-*/
+
 
 .task-actions {
   display: flex;
@@ -620,9 +567,7 @@
 }
 
 
-/*
-  LOADING
-*/
+
 
 .loading {
   padding: 50px 20px;
@@ -634,9 +579,6 @@
 }
 
 
-/*
-  EMPTY TASKS
-*/
 
 .no-tasks {
   padding: 50px 20px;
@@ -650,11 +592,6 @@
 
 
 
-
-
-/*
-  MOBILE
-*/
 
 @media (max-width: 650px) {
 

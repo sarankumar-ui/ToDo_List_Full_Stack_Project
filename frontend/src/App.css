@@ -1,6 +1,4 @@
-/*
-  GLOBAL RESET
-*/
+
 
 * {
   box-sizing: border-box;
@@ -38,9 +36,6 @@ select {
 }
 
 
-/*
-  LOGIN / SIGNUP PAGE
-*/
 
 .auth-container {
   min-height: 100vh;
@@ -54,7 +49,7 @@ select {
 }
 
 
-/* Large background glow */
+
 
 .auth-container::before {
   content: "";
@@ -89,9 +84,7 @@ select {
 }
 
 
-/*
-  AUTH CARD
-*/
+
 
 .auth-card {
   position: relative;
@@ -107,9 +100,7 @@ select {
 }
 
 
-/*
-  AUTH HEADER
-*/
+
 
 .auth-card h1 {
   margin-bottom: 8px;
@@ -130,9 +121,7 @@ select {
 }
 
 
-/*
-  AUTH INPUTS
-*/
+
 
 .form-group {
   margin-bottom: 19px;
@@ -176,9 +165,7 @@ select {
 }
 
 
-/*
-  LOGIN + SIGNUP BUTTON
-*/
+
 
 .auth-card button {
   width: 100%;
@@ -232,9 +219,7 @@ select {
 }
 
 
-/*
-  AUTH ERROR
-*/
+
 
 .message {
   margin-top: 15px;
@@ -248,9 +233,6 @@ select {
 }
 
 
-/*
-  SWITCH LOGIN / SIGNUP
-*/
 
 .switch-page {
   margin-top: 25px;
@@ -275,9 +257,7 @@ select {
 }
 
 
-/* 
-   MOBILE AUTH
- */
+
 
 @media (max-width: 480px) {
 

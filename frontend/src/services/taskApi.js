@@ -1,83 +1,45 @@
 
 
-const API_URL =
-  "https://todo-list-full-stack-project.onrender.com/api/task";
+import API from "./api";
 
-// GET ALL TASKS
-export const getAllTasks = async () => {
-  const response = await fetch(`${API_URL}/alltasks`);
 
-  const data = await response.json();
+export const getAllTasks  = async () => {
+  const response = await API.get("/task/alltasks");
+  return response.data;
+}
 
-  if (!response.ok) {
-    throw new Error(data.message || "Failed to fetch tasks");
-  }
 
-  return data;
-};
-
-// GET TASK BY ID
-export const getTaskById = async (id) => {
-  const response = await fetch(`${API_URL}/${id}`);
-
-  const data = await response.json();
-
-  if (!response.ok) {
-    throw new Error(data.message || "Failed to fetch task");
-  }
-
-  return data;
-};
-
-// CREATE TASK
 export const createTask = async (taskData) => {
-  const response = await fetch(`${API_URL}/createnewtask`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(taskData),
-  });
-
-  const data = await response.json();
-
-  if (!response.ok) {
-    throw new Error(data.message || "Failed to create task");
-  }
-
-  return data;
+  const response = await API.post("/task/createnewtask", taskData);
+  return response.data;
 };
 
-// UPDATE TASK
+
 export const updateTask = async (id, taskData) => {
-  const response = await fetch(`${API_URL}/updatetask/${id}`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(taskData),
-  });
-
-  const data = await response.json();
-
-  if (!response.ok) {
-    throw new Error(data.message || "Failed to update task");
-  }
-
-  return data;
+  const response = await API.put(`/task/updatetask/${id}`, taskData);
+  return response.data;
 };
 
-// DELETE TASK
+
+export const updateTaskStatus = async (id, status) => {
+  const response = await API.patch(`/task/updatetaskstatus/${id}`, { status });
+  return response.data;
+};
+
+
 export const deleteTask = async (id) => {
-  const response = await fetch(`${API_URL}/deletetask/${id}`, {
-    method: "DELETE",
+  const response = await API.delete(`/task/deletetask/${id}`);
+  return response.data;
+};
+
+
+export const searchTasks = async (query = '', status = 'All', priority = 'All') => {
+  const response = await API.get('/task/search', {
+    params: {
+      q: query,
+      status: status,
+      priority: priority,
+    }
   });
-
-  const data = await response.json();
-
-  if (!response.ok) {
-    throw new Error(data.message || "Failed to delete task");
-  }
-
-  return data;
+  return response.data;
 };

@@ -10,7 +10,7 @@ function TaskCard({
   return (
     <div className="task-card">
 
-      {/* HEADER */}
+      
 
       <div className="task-card-header">
 
@@ -24,13 +24,13 @@ function TaskCard({
 
       </div>
 
-      {/* DESCRIPTION */}
+      
 
       <p className="description">
         {task.description}
       </p>
 
-      {/* STATUS */}
+      
 
       <div className="status-row">
 
@@ -68,7 +68,7 @@ function TaskCard({
 
       </div>
 
-      {/* CREATED DATE */}
+      
 
       {task.createdAt && (
         <p className="task-date">
@@ -79,7 +79,7 @@ function TaskCard({
         </p>
       )}
 
-      {/* ACTION BUTTONS */}
+     
 
       <div className="task-actions">
 

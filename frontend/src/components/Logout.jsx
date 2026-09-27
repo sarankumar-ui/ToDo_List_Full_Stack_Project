@@ -4,13 +4,13 @@ function LogoutButton() {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    // Remove logged-in user
+    
     localStorage.removeItem("user");
 
-    // Optional: remove saved todos on logout
+    
     localStorage.removeItem("todos");
 
-    // Redirect to login page
+  
     navigate("/login", { replace: true });
   };
 
