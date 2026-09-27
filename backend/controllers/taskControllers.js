@@ -1,6 +1,7 @@
 const Task = require("../models/Task");
 
 
+
 const createTask = async (req, res) => {
     try {
         const { title, description, status, priority } = req.body;
@@ -133,11 +134,44 @@ const deleteTask = async (req, res) => {
   }
 };
 
+
+const searchTasks = async (req, res) => {
+  try {
+    const { q = "", status = "All", priority = "All" } = req.query;
+
+    const query = {};
+
+    
+    if (req.user && req.user._id) {
+      query.userId = req.user._id;
+    }
+
+    if (q) {
+      query.title = { $regex: q, $options: "i" };
+    }
+
+    if (status !== "All") {
+      query.status = status;
+    }
+
+    if (priority !== "All") {
+      query.priority = priority;
+    }
+
+    const tasks = await Task.find(query);
+    res.status(200).json({ tasks });
+  } catch (error) {
+    console.error("Error in searchTasks:", error);
+    res.status(500).json({ message: "Internal server error fetching tasks" });
+  }
+};
+
 module.exports = {
   createTask,
   getAllTasks,
   getTaskById,
   updateTask,
   deleteTask,
+  searchTasks,
 };
 
