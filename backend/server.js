@@ -10,14 +10,21 @@ const app = express();
 const port = process.env.PORT || 4000;
 
 
+// app.use(
+//   cors({
+//     origin: [
+//       "http://localhost:5173",
+//       "https://statuesque-dolphin-260563.netlify.app",
+//       "https://6a99461a5b624f08d42182f7--statuesque-dolphin-260563.netlify.app",
+//       "https://ephemeral-chimera-0fbe42.netlify.app"
+//     ],
+//     credentials: true,
+//   })
+// );
+
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://statuesque-dolphin-260563.netlify.app",
-      "https://6a99461a5b624f08d42182f7--statuesque-dolphin-260563.netlify.app",
-      "https://ephemeral-chimera-0fbe42.netlify.app"
-    ],
+    origin: true,
     credentials: true,
   })
 );
