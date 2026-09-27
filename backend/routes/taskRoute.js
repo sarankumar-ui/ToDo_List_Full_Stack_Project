@@ -18,7 +18,8 @@ router.post("/createnewtask", createTask);
 router.get("/alltasks", getAllTasks);
 
 
-router.get("/:id", getTaskById);
+
+router.get("/search", searchTasks);
 
 
 router.put("/updatetask/:id", updateTask);
@@ -26,6 +27,7 @@ router.put("/updatetask/:id", updateTask);
 
 router.delete("/deletetask/:id", deleteTask);
 
-router.get("/search", searchTasks);
+
+router.get("/:id", getTaskById);
 
 module.exports = router;
