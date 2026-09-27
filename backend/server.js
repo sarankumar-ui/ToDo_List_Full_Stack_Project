@@ -9,7 +9,7 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 4000;
 
-// CORS configuration - added your exact Netlify domain
+
 app.use(
   cors({
     origin: [
@@ -24,7 +24,7 @@ app.use(
 
 app.use(express.json());
 
-// Routes
+
 const userRoute = require('./routes/userRoute');
 app.use("/api/users", userRoute);
 
@@ -35,7 +35,7 @@ app.get("/", (req, res) => {
   res.send("Backend connected successfully");
 });
 
-// Connect to MongoDB FIRST, then start the express server
+
 mongoose
   .connect(process.env.MONGODB_URI, {
     dbName: "TuteDudePro_1",

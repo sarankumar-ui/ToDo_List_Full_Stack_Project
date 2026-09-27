@@ -70,7 +70,7 @@ router.post('/login', async (req, res) => {
             })    
         }
 
-        // Compare password
+
     const isPasswordCorrect = await bcrypt.compare(
       password,
       user.password
@@ -82,7 +82,7 @@ router.post('/login', async (req, res) => {
       });
     }
 
-    // Login successful
+
     res.status(200).json({
       message: "Login successful",
       user: {
