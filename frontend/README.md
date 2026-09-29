@@ -15,8 +15,76 @@ The React Compiler is not enabled on this template because of its impact on dev 
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
 
+
+
+
+#  To-Do List Application - Frontend
+A react-based frontend for a full-stack To-Do List application. User can create an account, log in, and manage their tasks through a dasboard.
+
+# Features
+.User registration
+.User login
+.Task creation
+.Task editing
+.Task deletion
+.Search Task
+.Filter tasks by status
+.Filter tasks by Priority
+.Logout
+# Technologies Used
+.React
+.React Router DOM
+.Axios
+.JavaScript
+.CSS
 # Frontend Setup
 .npm create vite@latest
-.npm install react-router-dom
+.npm install
+.React-router-dom
 
-.I created dumy user for login please check for user0@gmail.com:  user0@1234
+
+# User Authentication
+SignUp
+Users Provide:
+.Name
+.Emial
+.Password
+
+
+Login
+User Provide:
+.Email
+.Password
+
+
+# API Endpoints Used
+Signup
+POST:- /api/users/signup
+
+Login
+POST:- /api/users/login
+
+Create Task
+POST:- /api/task/createnewtask
+
+
+Get All Tasks
+GET:- /api/task/alltasks
+
+
+Update Task
+PUT:- /api/task/updatetask/:id
+
+Delete Task
+DELETE:- /api/task/deletetask/:id
+
+Search Task
+GET:- /api/task/search
+
+Get Task By Id
+GET:- /api/task/:id
+
+UpdateTaskStatus
+PATCH:- /api/task/updatetaskstatus/:id
+
+

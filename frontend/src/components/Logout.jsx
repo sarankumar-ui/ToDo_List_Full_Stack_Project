@@ -6,7 +6,7 @@ function LogoutButton() {
   const handleLogout = () => {
     
     localStorage.removeItem("user");
-
+    localStorage.removeItem("token");
     
     localStorage.removeItem("todos");
 
