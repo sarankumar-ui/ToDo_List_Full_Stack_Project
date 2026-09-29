@@ -1,10 +1,10 @@
-
 const Task = require("../models/Task");
 const mongoose = require("mongoose");
 
 const isValidObjectId = (id) => {
   return mongoose.Types.ObjectId.isValid(id);
 };
+
 
 
 
@@ -52,8 +52,9 @@ const createTask = async (req, res) => {
 
 const getAllTasks = async (req, res) => {
   try {
-    const tasks = await Task.find()
-      .sort({ createdAt: -1 });
+    const tasks = await Task.find().sort({
+      createdAt: -1,
+    });
 
     res.status(200).json({
       success: true,
@@ -172,7 +173,6 @@ const updateTask = async (req, res) => {
 };
 
 
-
 const updateTaskStatus = async (req, res) => {
   try {
     const { id } = req.params;
@@ -223,7 +223,7 @@ const updateTaskStatus = async (req, res) => {
     });
   } catch (error) {
     console.error(
-      "Error updating task status:",
+      "Update task status error:",
       error
     );
 
@@ -235,7 +235,6 @@ const updateTaskStatus = async (req, res) => {
     });
   }
 };
-
 
 
 const deleteTask = async (req, res) => {
@@ -277,7 +276,6 @@ const deleteTask = async (req, res) => {
 };
 
 
-
 const searchTasks = async (req, res) => {
   try {
     const {
@@ -303,8 +301,9 @@ const searchTasks = async (req, res) => {
       query.priority = priority;
     }
 
-    const tasks = await Task.find(query)
-      .sort({ createdAt: -1 });
+    const tasks = await Task.find(query).sort({
+      createdAt: -1,
+    });
 
     res.status(200).json({
       success: true,
@@ -326,7 +325,6 @@ const searchTasks = async (req, res) => {
   }
 };
 
-
 module.exports = {
   createTask,
   getAllTasks,
@@ -336,5 +334,3 @@ module.exports = {
   deleteTask,
   searchTasks,
 };
-
-
