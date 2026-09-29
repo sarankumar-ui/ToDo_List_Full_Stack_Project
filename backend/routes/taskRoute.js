@@ -5,6 +5,7 @@ const {
   getAllTasks,
   getTaskById,
   updateTask,
+  updateTaskStatus,
   deleteTask,
   searchTasks,
 } = require("../controllers/taskControllers");
@@ -23,6 +24,9 @@ router.get("/search", searchTasks);
 
 
 router.put("/updatetask/:id", updateTask);
+
+
+router.patch("/updatetaskstatus/:id", updateTaskStatus);
 
 
 router.delete("/deletetask/:id", deleteTask);
